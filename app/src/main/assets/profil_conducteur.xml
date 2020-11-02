@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<profils>
+    <profil probatoire="false" points="12">Conducteur lambda</profil>
+    <profil probatoire="false" points="6">Mauvais conducteur</profil>
+    <profil probatoire="true" points="6">Jeune conducteur</profil>
+    <profil probatoire="true" points="8">Jeune conducteur 1an</profil>
+    <profil probatoire="true" points="10">Jeune conducteur 2an</profil>
+    <profil probatoire="true" points="9">Conduite acompagnée 1an</profil>
+</profils>

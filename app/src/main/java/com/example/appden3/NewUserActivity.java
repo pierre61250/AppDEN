@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class NewUserActivity extends AppCompatActivity {
+    private static ChoiceUserActivity activity;
+
     private TextInputEditText nomUser;
     private Switch probatoireUser;
     private EditText pointPermisUser;
@@ -35,6 +37,10 @@ public class NewUserActivity extends AppCompatActivity {
         probatoireUser = (Switch) findViewById(R.id.probatoire);
 
         pointPermisUser = (EditText) findViewById(R.id.pointSurPermis);
+    }
+
+    public static void setActivity(ChoiceUserActivity activity) {
+        NewUserActivity.activity = activity;
     }
 
     private void saveParameters() {
@@ -71,9 +77,9 @@ public class NewUserActivity extends AppCompatActivity {
         // si il n'y a pas d'erreur
         if (argumentsValid) {
             // on ajoute un nouvel utilisateur
-            Log.i("resultat", nom + ", proba: " + ((probatoire) ? "oui" : "non") + ", points: " + String.valueOf(nombre_point));
-            ProfilUser new_user = new ProfilUser(nom, probatoire, nombre_point);
-            ChoiceUserActivity.ajoutUtilisateur(new_user);
+            ProfilUser new_user = ProfilUser.createNewUser(nom, probatoire, nombre_point);
+            activity.ajoutUtilisateur(new_user);
+            (new UserXML(this)).saveUser(new_user);
 
             // puis on ferme la page
             this.finish();

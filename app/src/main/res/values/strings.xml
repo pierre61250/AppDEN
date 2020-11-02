@@ -12,7 +12,7 @@
     <string name="nom_user">Entrez un nom d\'utilisateur</string>
     <string name="nom">Nom</string>
 
-    <string name="permis_proba">Avez vous un permis probatoire</string>
+    <string name="permis_proba_question">Avez vous un permis probatoire</string>
     <string name="permis_proba_info">(Permis pour jeune conducteur / permis A)</string>
     <string name="probatoire">Permis probatoire</string>
 

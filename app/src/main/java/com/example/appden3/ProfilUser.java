@@ -1,5 +1,7 @@
 package com.example.appden3;
 
+import android.util.Log;
+
 public class ProfilUser {
     private String nomUser;
     private boolean probatoire;
@@ -9,6 +11,16 @@ public class ProfilUser {
         this.nomUser = nomUser;
         this.probatoire = probatoire;
         this.nb_points = nb_points;
+    }
+
+    public static ProfilUser createNewUser(String nomUser, boolean probatoire, int nb_points) {
+        ProfilUser new_profile = new ProfilUser(nomUser, probatoire, nb_points);
+        Log.i("profil", new_profile.getInfosUser());
+        return new_profile;
+    }
+
+    public String getInfosUser() {
+        return nomUser + " - " + ((probatoire)?"permis probatoire - ":"") + nb_points + " points";
     }
 
     public String getNomUser() {

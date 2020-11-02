@@ -2,9 +2,10 @@ package com.example.appden3;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,20 +15,24 @@ import java.util.ArrayList;
 public class ChoiceUserActivity extends AppCompatActivity {
     private Button newUserButton;
     private Button validerButton;
+    private RadioGroup radioGroup;
 
-    private static ArrayList<ProfilUser> utilisateurs;
-
-    private ProfilUser utilisateurSelectionner;
+    private ArrayList<ProfilUser> utilisateurs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choice_user);
 
-        if (utilisateurs == null)
-            utilisateurs = new ArrayList<>();
+        UserXML extractor = new UserXML(this);
 
-        utilisateurSelectionner = null;
+        if (utilisateurs == null)
+            utilisateurs = extractor.getProfilsUsers();
+
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroupe);
+        for (ProfilUser user : utilisateurs) {
+            ajoutNewChoiceToRadioGroup(user);
+        }
 
         newUserButton = (Button) findViewById(R.id.new_user_button);
         newUserButton.setOnClickListener(new View.OnClickListener() {
@@ -49,16 +54,26 @@ public class ChoiceUserActivity extends AppCompatActivity {
     private void openNewUserActivity() {
         Intent intent = new Intent(this, NewUserActivity.class);
         this.startActivity(intent);
+        NewUserActivity.setActivity(this);
+    }
+
+    public void ajoutUtilisateur(ProfilUser new_user) {
+        utilisateurs.add(new_user);
+        ajoutNewChoiceToRadioGroup(new_user);
+    }
+
+    private void ajoutNewChoiceToRadioGroup(ProfilUser user) {
+        RadioButton userButton = new RadioButton(this);
+        userButton.setText(user.getInfosUser());
+        radioGroup.addView(userButton);
     }
 
     private void validerLeChoixDuser() {
-            if (utilisateurSelectionner != null) {
-            } else
-                Toast.makeText(this, R.string.error_user_not_selected, Toast.LENGTH_SHORT).show();
-    }
-
-    public static void ajoutUtilisateur(ProfilUser new_user) {
-        utilisateurs.add(new_user);
+        // verifie qu'un utilisateur ai bien ete selectionee
+        if (radioGroup.getCheckedRadioButtonId() != -1) {
+            // TODO
+        } else
+            Toast.makeText(this, R.string.error_user_not_selected, Toast.LENGTH_SHORT).show();
     }
 
 }
