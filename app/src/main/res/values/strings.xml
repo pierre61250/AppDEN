@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">AppDEN3</string>
+    <string name="app_name">AppDEN</string>
+    <string name="main_commencez_simulation">Commencer</string>
 
     <string name="choice_user">Veuillez sélectionner votre profil conducteur</string>
     <string name="new_usager">Nouveau conducteur</string>
@@ -21,6 +22,5 @@
     <string name="error_input_null">Information manquante</string>
 
     <string name="button_validation">Valider</string>
-    <string name="title_activity_new_user">NewUserActivity</string>
 
 </resources>

@@ -50,7 +50,7 @@ public class NewUserActivity extends AppCompatActivity {
 
         // attribution des valeurs
         if (nomUser != null && !nomUser.getText().toString().equals(""))
-            nom = nomUser.getText().toString();
+            nom = nomUser.getText().toString().trim();
         else
             nomUser.setError(error_valeur_non_saisie);
 
@@ -70,16 +70,17 @@ public class NewUserActivity extends AppCompatActivity {
 
         // si il n'y a pas d'erreur
         if (argumentsValid) {
+            // on ajoute un nouvel utilisateur
             Log.i("resultat", nom + ", proba: " + ((probatoire) ? "oui" : "non") + ", points: " + String.valueOf(nombre_point));
             ProfilUser new_user = new ProfilUser(nom, probatoire, nombre_point);
-            // on ajoute un nouvel utilisateur
             ChoiceUserActivity.ajoutUtilisateur(new_user);
+
+            // puis on ferme la page
+            this.finish();
         }
     }
 
     private boolean gestionErreur(String nom, int nombre_point, String error_valeur_non_saisie) {
-
-
         // si il n'y a pas un nombre normal de points sur le permis
         if (nombre_point < 0 || nombre_point > 12) {
             pointPermisUser.setError(getResources().getString(R.string.error_point_user));
