@@ -1,7 +1,6 @@
 package com.example.appden3;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,14 +16,13 @@ public class NewUserActivity extends AppCompatActivity {
     private TextInputEditText nomUser;
     private Switch probatoireUser;
     private EditText pointPermisUser;
-    private Button saveParam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newuser_activity);
 
-        saveParam = (Button) findViewById(R.id.button_save);
+        Button saveParam = (Button) findViewById(R.id.button_save);
         saveParam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +69,7 @@ public class NewUserActivity extends AppCompatActivity {
         // on verifie qu'il n'y a pas d'erreur
         argumentsValid = (nomUser != null && pointPermisUser != null && !pointText.equals(""));
         // on verifie qu'il n'y a pas d'erreur dans la saisie des valeurs par l'utilisateur
-        argumentsValid = argumentsValid && gestionErreur(nom, nombre_point, error_valeur_non_saisie);
+        argumentsValid = argumentsValid && gestionErreur(nom, nombre_point);
 
 
         // si il n'y a pas d'erreur
@@ -86,7 +84,13 @@ public class NewUserActivity extends AppCompatActivity {
         }
     }
 
-    private boolean gestionErreur(String nom, int nombre_point, String error_valeur_non_saisie) {
+    private boolean gestionErreur(String nom, int nombre_point) {
+        // si un utilisateur a deja le meme nom
+        if (activity.hasUserThisName(nom)) {
+            nomUser.setError(getResources().getString(R.string.error_name_taken));
+            return false;
+        }
+
         // si il n'y a pas un nombre normal de points sur le permis
         if (nombre_point < 0 || nombre_point > 12) {
             pointPermisUser.setError(getResources().getString(R.string.error_point_user));

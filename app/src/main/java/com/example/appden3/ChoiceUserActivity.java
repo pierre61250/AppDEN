@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class ChoiceUserActivity extends AppCompatActivity {
-    private Button newUserButton;
-    private Button validerButton;
     private RadioGroup radioGroup;
 
     private ArrayList<ProfilUser> utilisateurs;
@@ -34,7 +32,7 @@ public class ChoiceUserActivity extends AppCompatActivity {
             ajoutNewChoiceToRadioGroup(user);
         }
 
-        newUserButton = (Button) findViewById(R.id.new_user_button);
+        Button newUserButton = (Button) findViewById(R.id.new_user_button);
         newUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,7 +40,7 @@ public class ChoiceUserActivity extends AppCompatActivity {
             }
         });
 
-        validerButton = (Button) findViewById(R.id.buttonValider);
+        Button validerButton = (Button) findViewById(R.id.buttonValider);
         validerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +64,14 @@ public class ChoiceUserActivity extends AppCompatActivity {
         RadioButton userButton = new RadioButton(this);
         userButton.setText(user.getInfosUser());
         radioGroup.addView(userButton);
+    }
+
+    public boolean hasUserThisName(String name) {
+        for (ProfilUser user : utilisateurs)
+            if (user.getNomUser().equals(name))
+                return true;
+
+        return false;
     }
 
     private void validerLeChoixDuser() {
