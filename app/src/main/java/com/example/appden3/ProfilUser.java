@@ -1,28 +1,26 @@
 package com.example.appden3;
 
 public class ProfilUser {
-    private int nb_points;
+    private String nomUser;
     private boolean probatoire;
+    private int nb_points;
 
-    public ProfilUser(int nb_points, boolean probatoire) {
-        this.nb_points = nb_points;
+    public ProfilUser(String nomUser, boolean probatoire, int nb_points) {
+        this.nomUser = nomUser;
         this.probatoire = probatoire;
-    }
-
-    public int getNb_points() {
-        return nb_points;
-    }
-
-    public void setNb_points(int nb_points) {
         this.nb_points = nb_points;
+    }
+
+    public String getNomUser() {
+        return nomUser;
     }
 
     public boolean isProbatoire() {
         return probatoire;
     }
 
-    public void setProbatoire(boolean probatoire) {
-        this.probatoire = probatoire;
+    public int getNb_points() {
+        return nb_points;
     }
 
 }

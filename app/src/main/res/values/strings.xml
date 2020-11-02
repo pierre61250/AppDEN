@@ -3,20 +3,24 @@
 
     <string name="choice_user">Veuillez sélectionner votre profil conducteur</string>
     <string name="new_usager">Nouveau conducteur</string>
+
+    <string name="error_user_not_selected">Veuillez choisir un profil conducteur</string>
+
+
+    <!-- New user -->
+    <string name="nom_user">Entrez un nom d\'utilisateur</string>
+    <string name="nom">Nom</string>
+
+    <string name="permis_proba">Avez vous un permis probatoire</string>
+    <string name="permis_proba_info">(Permis pour jeune conducteur / permis A)</string>
+    <string name="probatoire">Permis probatoire</string>
+
+    <string name="points_user">Saisissez le nombre de points sur votre permis</string>
+    <string name="error_point_user">Points entre 0 et 12</string>
+
+    <string name="error_input_null">Information manquante</string>
+
+    <string name="button_validation">Valider</string>
     <string name="title_activity_new_user">NewUserActivity</string>
 
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>
