@@ -2,6 +2,7 @@ package com.example.appden3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,6 +44,9 @@ public class QuestionActivity extends AppCompatActivity {
             Log.e("Erreur", "Erreur taux alcool");
 
         recidive = recidiveUser.isChecked();
+
+        Intent intent = new Intent(this, ChoiceUserActivity.class);
+        this.startActivity(intent);
     }
 
     public static void setUser(ProfilUser user) {
