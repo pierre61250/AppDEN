@@ -30,6 +30,6 @@
     <string name="sanction_niv2">Vous encourez :\n- Un stage de sensibilisation\n- Un retrait de 6 points sur votre permis de conduire\n- Une suspension ou annulation de permis\- Une immobilisation du véhicule</string>
     <string name="sanction_niv2_non_recidiviste">\n- Jusqu\'à 4 500 euros d\'amende\n- Jusqu\'à 2 ans de prison</string>
     <string name="sanction_niv2_recidiviste">\n- Jusqu\'à 9 000 euros d\'amende\n- Jusqu\'à 4 ans de prison</string>
-    <string name="annul">Cela entraîne une annulation imédiate de votre permis de conduire.</string>
+    <string name="annul">\nCela entraîne une annulation imédiate de votre permis de conduire.</string>
 
 </resources>

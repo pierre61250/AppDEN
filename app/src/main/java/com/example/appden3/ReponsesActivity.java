@@ -16,6 +16,7 @@ public class ReponsesActivity extends AppCompatActivity {
     private int points;
     private TextView reponse;
     private Button recommencer;
+    private String repPeine = "", repRecidive ="", repPoints ="";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,9 +35,27 @@ public class ReponsesActivity extends AppCompatActivity {
     }
 
     private void sanction(Double tauxAlcool, boolean recidive, boolean probatoire, int points) {
-        if (points <= 6){
-
+        if (tauxAlcool >= 0.8){
+            repPeine = this.getResources().getString(R.string.sanction_niv2);
+            if (recidive){
+                repRecidive = this.getResources().getString(R.string.sanction_niv2_recidiviste);
+            }
+            else {
+                repRecidive = this.getResources().getString(R.string.sanction_niv2_non_recidiviste);
+            }
         }
+        else if((tauxAlcool >= 0.5 && !probatoire) || (tauxAlcool >= 0.25 && probatoire)){
+            repPeine = this.getResources().getString(R.string.sanction_niv1);
+        }
+        points = points - 6;
+        if (points <= 0){
+            repPoints = this.getResources().getString(R.string.annul);
+        }
+        else {
+            repPoints = "Il vous reste " + points + " point(s) sur votre permis";
+        }
+
+        reponse.setText(repPeine + repRecidive + repPoints);
     }
 
 
