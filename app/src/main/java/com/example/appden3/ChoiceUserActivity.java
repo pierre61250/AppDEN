@@ -79,6 +79,9 @@ public class ChoiceUserActivity extends AppCompatActivity {
         if (radioGroup.getCheckedRadioButtonId() != -1) {
             Intent intent = new Intent(this, QuestionActivity.class);
             this.startActivity(intent);
+
+            ProfilUser currentChoice = utilisateurs.get(radioGroup.getCheckedRadioButtonId());
+            QuestionActivity.setUser(currentChoice);
         } else
             Toast.makeText(this, R.string.error_user_not_selected, Toast.LENGTH_SHORT).show();
     }
