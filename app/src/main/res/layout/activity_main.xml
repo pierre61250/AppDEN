@@ -19,9 +19,9 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cette application a été développée à des fins pédagogiques, dans le cadre de la collaboration entre élève d’informatique et élève de droit dans une option Droit Éthique et Numérique (DEN). Cette application est donc fictive et ne représente pas la réalité des choses, on ne peux pas s’y fier. Les éléments y figurant sont les sanctions promulguées par le code pénale, cependant il peut y avoir des erreurs et nous n’en sommes pas responsable. En effet, cette application est un projet fictif et nous ne voulons pas nous exposer à des sanctions juridiques dans le cas où certaines informations seraient fausses. Dans notre projet la forme prime le fond."
+        android:text="@string/main_texte_droit"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,12 +30,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/buttonStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher"
-        tools:ignore="MissingConstraints" />
+        app:srcCompat="@drawable/image_logo" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
