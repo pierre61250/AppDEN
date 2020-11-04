@@ -13,6 +13,7 @@
         android:fontFamily="serif-monospace"
         android:text="Résultat"
         android:textColor="#070707"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button_recommencer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
