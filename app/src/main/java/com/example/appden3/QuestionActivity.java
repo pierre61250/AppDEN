@@ -35,7 +35,7 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
-    public void recupDonnees(){
+    public void recupDonnees() {
         boolean argumentsValid = true;
         String recupTauxText = inputTaux.getText().toString().trim();
         if (!recupTauxText.trim().equals(""))
@@ -54,7 +54,9 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void changeActivity() {
         Intent intent = new Intent(this, ReponsesActivity.class);
-        intent.getExtras().clear();
+        if (intent.getExtras() != null)
+            intent.getExtras().clear();
+
         intent.putExtra("tauxAlcool", tauxAlcool);
         intent.putExtra("recidive", recidive);
         intent.putExtra("userProbatoire", user.isProbatoire());
