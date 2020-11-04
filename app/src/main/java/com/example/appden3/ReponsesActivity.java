@@ -18,8 +18,9 @@ public class ReponsesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_reponses);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        if(extras != null) tauxAlcool = extras.getFloat("tauxAlcool", 0);
-        if(extras != null) recidive = extras.getBoolean("recidive", false);
+        if(extras != null) tauxAlcool = extras.getFloat("tauxAlcool");
+        if(extras != null) recidive = extras.getBoolean("recidive");
+        if(extras != null) user = extras.getString("user");
     }
 
 
