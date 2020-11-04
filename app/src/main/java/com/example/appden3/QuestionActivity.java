@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 public class QuestionActivity extends AppCompatActivity {
     private static ProfilUser user;
     private EditText inputTaux;
-    private float tauxAlcool;
+    private double tauxAlcool;
     private Switch recidiveUser;
     private boolean recidive;
 
@@ -38,28 +38,20 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
-    public static ProfilUser getUser() {
-        return user;
-    }
-
-    public float getTauxAlcool() {
-        return tauxAlcool;
-    }
-
-    public boolean isRecidive() {
-        return recidive;
-    }
-
     public void recupDonnées(){
         String recupTauxText = inputTaux.getText().toString().trim();
-        if (recupTauxText != null && !recupTauxText.trim().equals(""))
-            tauxAlcool = Float.parseFloat(recupTauxText);
+        if (!recupTauxText.trim().equals(""))
+            tauxAlcool = Double.parseDouble(recupTauxText);
         else
             Log.e("Erreur", "Erreur taux alcool");
 
         recidive = recidiveUser.isChecked();
 
         Intent intent = new Intent(this, ReponsesActivity.class);
+        intent.putExtra("tauxAlcool", tauxAlcool);
+        intent.putExtra("recidive", recidive);
+        intent.putExtra("userProbatoire",  user.isProbatoire());
+        intent.putExtra("userPoints",  user.getNb_points());
         this.startActivity(intent);
     }
 
