@@ -36,10 +36,22 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
+    public static ProfilUser getUser() {
+        return user;
+    }
+
+    public float getTauxAlcool() {
+        return tauxAlcool;
+    }
+
+    public boolean isRecidive() {
+        return recidive;
+    }
+
     public void recupDonnées(){
         String recupTauxText = inputTaux.getText().toString().trim();
         if (recupTauxText != null && !recupTauxText.trim().equals(""))
-            tauxAlcool = Integer.parseInt(recupTauxText);
+            tauxAlcool = Float.parseFloat(recupTauxText);
         else
             Log.e("Erreur", "Erreur taux alcool");
 
