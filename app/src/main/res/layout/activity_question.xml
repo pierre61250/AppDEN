@@ -22,10 +22,23 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="363dp"
-                    android:layout_height="43dp"
-                    android:hint="hint" />
+                    android:id="@+id/inputTaux"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Taux" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <Switch
+                android:id="@+id/switch_recidive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recidive" />
+
+            <Button
+                android:id="@+id/button_valider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VALIDER" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
