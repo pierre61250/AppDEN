@@ -4,17 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Switch;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 public class QuestionActivity extends AppCompatActivity {
     private static ProfilUser user;
-    private TextInputEditText inputTaux;
-    private float tauxAlcool;
+    private EditText inputTaux;
+    private double tauxAlcool;
     private Switch recidiveUser;
     private boolean recidive;
 
@@ -23,7 +25,7 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        inputTaux = (TextInputEditText) findViewById(R.id.inputTaux);
+        inputTaux = (EditText) findViewById(R.id.inputTaux);
 
         recidiveUser = (Switch) findViewById(R.id.switch_recidive);
 
@@ -36,28 +38,20 @@ public class QuestionActivity extends AppCompatActivity {
         });
     }
 
-    public static ProfilUser getUser() {
-        return user;
-    }
-
-    public float getTauxAlcool() {
-        return tauxAlcool;
-    }
-
-    public boolean isRecidive() {
-        return recidive;
-    }
-
     public void recupDonnées(){
         String recupTauxText = inputTaux.getText().toString().trim();
-        if (recupTauxText != null && !recupTauxText.trim().equals(""))
-            tauxAlcool = Float.parseFloat(recupTauxText);
+        if (!recupTauxText.trim().equals(""))
+            tauxAlcool = Double.parseDouble(recupTauxText);
         else
             Log.e("Erreur", "Erreur taux alcool");
 
         recidive = recidiveUser.isChecked();
 
-        Intent intent = new Intent(this, ChoiceUserActivity.class);
+        Intent intent = new Intent(this, ReponsesActivity.class);
+        intent.putExtra("tauxAlcool", tauxAlcool);
+        intent.putExtra("recidive", recidive);
+        intent.putExtra("userProbatoire",  user.isProbatoire());
+        intent.putExtra("userPoints",  user.getNb_points());
         this.startActivity(intent);
     }
 
