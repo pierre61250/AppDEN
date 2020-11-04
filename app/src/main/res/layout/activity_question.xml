@@ -17,16 +17,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <com.google.android.material.textfield.TextInputLayout
+            <TextView
+                android:id="@+id/textView8"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:text="Taux :" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/inputTaux"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Taux" />
-            </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/inputTaux"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal" />
 
             <Switch
                 android:id="@+id/switch_recidive"
