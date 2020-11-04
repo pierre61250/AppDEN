@@ -2,6 +2,7 @@ package com.example.appden3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -62,7 +63,7 @@ public class ChoiceUserActivity extends AppCompatActivity {
 
     private void ajoutNewChoiceToRadioGroup(ProfilUser user) {
         RadioButton userButton = new RadioButton(this);
-        userButton.setText(user.getInfosUser());
+        userButton.setText(user.toString());
         radioGroup.addView(userButton);
     }
 
@@ -82,6 +83,7 @@ public class ChoiceUserActivity extends AppCompatActivity {
 
             ProfilUser currentChoice = utilisateurs.get(radioGroup.getCheckedRadioButtonId());
             QuestionActivity.setUser(currentChoice);
+            Log.i("application profil selectionner", currentChoice.toString());
         } else
             Toast.makeText(this, R.string.error_user_not_selected, Toast.LENGTH_SHORT).show();
     }

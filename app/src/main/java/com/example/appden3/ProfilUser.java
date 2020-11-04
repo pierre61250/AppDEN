@@ -15,11 +15,12 @@ public class ProfilUser {
 
     public static ProfilUser createNewUser(String nomUser, boolean probatoire, int nb_points) {
         ProfilUser new_profile = new ProfilUser(nomUser, probatoire, nb_points);
-        Log.i("profil", new_profile.getInfosUser());
+        Log.i("application profil", new_profile.toString());
         return new_profile;
     }
 
-    public String getInfosUser() {
+    @Override
+    public String toString() {
         return nomUser + " - " + ((probatoire)?"permis probatoire - ":"") + nb_points + " points";
     }
 
