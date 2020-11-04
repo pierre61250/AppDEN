@@ -77,7 +77,6 @@ public class NewUserActivity extends AppCompatActivity {
             // on ajoute un nouvel utilisateur
             ProfilUser new_user = ProfilUser.createNewUser(nom, probatoire, nombre_point);
             activity.ajoutUtilisateur(new_user);
-            (new UserXML(this)).saveUser(new_user);
 
             // puis on ferme la page
             this.finish();

@@ -86,35 +86,4 @@ public class UserXML {
         return usersProfil;
     }
 
-    public void saveUser(ProfilUser new_user) {
-        if (profil_conducteur == null)
-            profil_conducteur = parseXml("profil_conducteur.xml");
-
-        Element nodeUser = profil_conducteur.createElement("profil");
-        nodeUser.setNodeValue(new_user.getNomUser());
-        nodeUser.setAttribute(String.valueOf(new_user.isProbatoire()), NODE_ATTR_PROBA);
-        //nodeUser.setAttribute(String.valueOf(new_user.getNb_points()), NODE_ATTR_POINTS);
-
-        Node root = profil_conducteur.getElementsByTagName("profils").item(0);
-        root.appendChild(nodeUser);
-
-        String url = "";
-        /*
-        try {
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(profil_conducteur.getDocumentElement());
-            StreamResult result;
-
-
-            url = Environment.getDataDirectory().getPath() + "/com.apppden/profil_conducteur.xml";
-            result = new StreamResult(url);
-            transformer.transform(source, result);
-        } catch (TransformerException e) {
-            Log.e("save file", "Could'nt save data " + url + " : " + e);
-        }
-
-         */
-    }
-
 }

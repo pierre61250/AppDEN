@@ -77,7 +77,8 @@ public class ChoiceUserActivity extends AppCompatActivity {
     private void validerLeChoixDuser() {
         // verifie qu'un utilisateur ai bien ete selectionee
         if (radioGroup.getCheckedRadioButtonId() != -1) {
-            // TODO
+            Intent intent = new Intent(this, QuestionActivity.class);
+            this.startActivity(intent);
         } else
             Toast.makeText(this, R.string.error_user_not_selected, Toast.LENGTH_SHORT).show();
     }
