@@ -23,8 +23,11 @@
         android:id="@+id/button_recommencer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recommencer"
         android:layout_marginBottom="16dp"
+        android:fontFamily="serif-monospace"
+        android:text="Recommencer"
+        android:textColor="#070707"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
