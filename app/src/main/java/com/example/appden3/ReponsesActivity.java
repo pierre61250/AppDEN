@@ -34,7 +34,6 @@ public class ReponsesActivity extends AppCompatActivity {
 
         sanction(tauxAlcool,recidive,probatoire, points);
 
-        recommencer = (Button) findViewById(R.id.new_user_button);
         recommencer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
