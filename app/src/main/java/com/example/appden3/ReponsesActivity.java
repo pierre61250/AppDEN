@@ -2,6 +2,7 @@ package com.example.appden3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -32,6 +33,14 @@ public class ReponsesActivity extends AppCompatActivity {
         recommencer = findViewById(R.id.button_recommencer);
 
         sanction(tauxAlcool,recidive,probatoire, points);
+
+        recommencer = (Button) findViewById(R.id.new_user_button);
+        recommencer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recommencerLeQuestionnaire();
+            }
+        });
     }
 
     private void sanction(Double tauxAlcool, boolean recidive, boolean probatoire, int points) {
@@ -56,6 +65,11 @@ public class ReponsesActivity extends AppCompatActivity {
         }
 
         reponse.setText(repPeine + repRecidive + repPoints);
+    }
+
+    private void recommencerLeQuestionnaire() {
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
     }
 
 
