@@ -4,6 +4,9 @@
     <string name="main_explication">Cette application simmule les sanctions encourue dans le cas d\'une conduite en état d\'ivresse</string>
     <string name="main_texte_droit">Cette application a été développée à des fins pédagogiques, dans le cadre de la collaboration entre élève d’informatique et élève de droit dans une option Droit Éthique et Numérique (DEN). Cette application est donc fictive et ne représente pas la réalité des choses, on ne peux pas s’y fier. Les éléments y figurant sont les sanctions promulguées par le code pénale, cependant il peut y avoir des erreurs et nous n’en sommes pas responsable. En effet, cette application est un projet fictif et nous ne voulons pas nous exposer à des sanctions juridiques dans le cas où certaines informations seraient fausses. Dans notre projet la forme prime le fond.</string>
 
+    <string name="button_validation">Valider</string>
+
+    <!-- Choice User -->
     <string name="choice_user">Veuillez sélectionner votre profil conducteur</string>
     <string name="new_usager">Nouveau conducteur</string>
 
@@ -24,8 +27,7 @@
 
     <string name="error_input_null">Information manquante</string>
 
-    <string name="button_validation">Valider</string>
-
+    <!-- Resultat -->
     <string name="sanction_niv1">Vous encourez :n- Un retrait de 6 points sur votre permis de conduire\n- Une suspension de permis de 3 ans maximum\n- Une immobilisation du véhicule\n- Jusqu\'à 750 euros d\'amende\</string>
     <string name="sanction_niv2">Vous encourez :\n- Un stage de sensibilisation\n- Un retrait de 6 points sur votre permis de conduire\n- Une suspension ou annulation de permis\- Une immobilisation du véhicule</string>
     <string name="sanction_niv2_non_recidiviste">\n- Jusqu\'à 4 500 euros d\'amende\n- Jusqu\'à 2 ans de prison</string>
